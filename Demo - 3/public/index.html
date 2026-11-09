@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pl" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rezerwacja sal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['DM Sans', 'system-ui', 'sans-serif'] },
+            colors: {
+              ink: {
+                950: '#0f1419',
+                700: '#3d4a57',
+                500: '#6b7a8a',
+                200: '#e8edf2',
+                100: '#f4f6f8',
+                50: '#fafbfc',
+              },
+              accent: {
+                DEFAULT: '#2563eb',
+                soft: '#eff6ff',
+                ring: '#93c5fd',
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-full bg-ink-100 font-sans text-ink-950 antialiased">
+    <header class="border-b border-ink-200 bg-white">
+      <div
+        class="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6"
+      >
+        <a href="/" class="flex items-center gap-2.5">
+          <span
+            class="flex h-8 w-8 items-center justify-center rounded-lg bg-accent text-xs font-bold text-white"
+            >R</span
+          >
+          <span class="text-sm font-semibold tracking-tight">Rezerwacja sal</span>
+        </a>
+        <a
+          href="/admin.html"
+          class="rounded-lg border border-ink-200 bg-white px-3 py-1.5 text-xs font-medium text-ink-700 transition hover:border-ink-500/30 hover:bg-ink-50"
+        >
+          Administracja
+        </a>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
+      <div id="status" class="mb-4 hidden" role="status" aria-live="polite"></div>
+
+      <div class="flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-8">
+        <aside class="w-full shrink-0 lg:w-64 xl:w-72" aria-labelledby="rooms-heading">
+          <h2 id="rooms-heading" class="mb-3 text-sm font-semibold text-ink-950">
+            Sale
+          </h2>
+          <div id="rooms-list" class="flex flex-col gap-2"></div>
+        </aside>
+
+        <div class="min-w-0 flex-1">
+          <section
+            id="calendar-section"
+            class="hidden rounded-xl border border-ink-200 bg-white shadow-sm"
+            aria-labelledby="calendar-heading"
+          >
+            <div
+              class="flex flex-col gap-3 border-b border-ink-200 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-5"
+            >
+              <div class="min-w-0">
+                <h2 id="calendar-heading" class="text-base font-semibold text-ink-950">
+                  Terminarz
+                </h2>
+                <p class="mt-0.5 truncate text-sm text-ink-500">
+                  <span id="selected-room-name" class="font-medium text-ink-950">—</span>
+                  <span class="mx-1.5 text-ink-200">|</span>
+                  <span id="calendar-title">—</span>
+                </p>
+              </div>
+              <div class="flex shrink-0 gap-1.5" role="group" aria-label="Tydzień">
+                <button
+                  id="week-prev"
+                  type="button"
+                  class="rounded-lg border border-ink-200 px-2.5 py-1.5 text-xs font-medium text-ink-700 hover:bg-ink-50"
+                >
+                  Poprzedni
+                </button>
+                <button
+                  id="week-today"
+                  type="button"
+                  class="rounded-lg bg-accent px-2.5 py-1.5 text-xs font-semibold text-white hover:bg-blue-700"
+                >
+                  Bieżący tydzień
+                </button>
+                <button
+                  id="week-next"
+                  type="button"
+                  class="rounded-lg border border-ink-200 px-2.5 py-1.5 text-xs font-medium text-ink-700 hover:bg-ink-50"
+                >
+                  Następny
+                </button>
+              </div>
+            </div>
+
+            <div class="px-4 pt-3 sm:px-5">
+              <div id="calendar-status" class="hidden" role="status"></div>
+            </div>
+
+            <div class="overflow-x-auto px-4 pb-4 pt-1 sm:px-5">
+              <div
+                id="calendar-grid"
+                class="grid min-w-[720px] grid-cols-7 gap-2"
+              ></div>
+            </div>
+
+            <section
+              id="reservation-form-section"
+              class="hidden border-t border-ink-200 bg-ink-50/80 px-4 py-5 sm:px-5"
+              aria-labelledby="reservation-form-heading"
+            >
+              <h3 id="reservation-form-heading" class="text-sm font-semibold text-ink-950">
+                Nowa rezerwacja
+              </h3>
+              <p class="mt-0.5 text-xs text-ink-500">
+                System odrzuci termin nakładający się na istniejącą rezerwację.
+              </p>
+
+              <div id="reservation-form-status" class="hidden" role="alert"></div>
+
+              <form
+                id="reservation-form"
+                class="mt-4 grid gap-3 sm:grid-cols-6"
+                novalidate
+              >
+                <div class="sm:col-span-2">
+                  <label for="field-date" class="mb-1 block text-xs font-medium text-ink-700"
+                    >Data</label
+                  >
+                  <input
+                    id="field-date"
+                    name="date"
+                    type="date"
+                    required
+                    class="w-full rounded-lg border border-ink-200 bg-white px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                  />
+                </div>
+                <div class="sm:col-span-2">
+                  <label
+                    for="field-time-start"
+                    class="mb-1 block text-xs font-medium text-ink-700"
+                    >Od</label
+                  >
+                  <input
+                    id="field-time-start"
+                    name="time_start"
+                    type="time"
+                    required
+                    class="w-full rounded-lg border border-ink-200 bg-white px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                  />
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="field-time-end" class="mb-1 block text-xs font-medium text-ink-700"
+                    >Do</label
+                  >
+                  <input
+                    id="field-time-end"
+                    name="time_end"
+                    type="time"
+                    required
+                    class="w-full rounded-lg border border-ink-200 bg-white px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                  />
+                </div>
+                <div class="sm:col-span-3">
+                  <label for="field-purpose" class="mb-1 block text-xs font-medium text-ink-700"
+                    >Cel</label
+                  >
+                  <input
+                    id="field-purpose"
+                    name="purpose"
+                    type="text"
+                    required
+                    maxlength="200"
+                    placeholder="Spotkanie, wykład, obrona pracy…"
+                    class="w-full rounded-lg border border-ink-200 bg-white px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                  />
+                </div>
+                <div class="sm:col-span-3">
+                  <label for="field-person" class="mb-1 block text-xs font-medium text-ink-700"
+                    >Rezerwujący</label
+                  >
+                  <input
+                    id="field-person"
+                    name="person_name"
+                    type="text"
+                    required
+                    maxlength="120"
+                    autocomplete="name"
+                    class="w-full rounded-lg border border-ink-200 bg-white px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                  />
+                </div>
+                <div class="sm:col-span-6">
+                  <button
+                    id="reservation-submit"
+                    type="submit"
+                    class="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-accent/30 disabled:opacity-50"
+                  >
+                    Zarezerwuj
+                  </button>
+                </div>
+              </form>
+            </section>
+          </section>
+
+          <p
+            id="calendar-placeholder"
+            class="rounded-xl border border-dashed border-ink-200 bg-white px-6 py-12 text-center text-sm text-ink-500"
+          >
+            Wybierz salę z listy po lewej, aby zobaczyć terminarz.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <script src="/js/ui.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/calendar.js"></script>
+    <script src="/js/reservationForm.js"></script>
+    <script src="/js/rooms.js"></script>
+  </body>
+</html>

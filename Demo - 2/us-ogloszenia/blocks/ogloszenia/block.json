@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "us-ogloszenia/ogloszenia",
+	"version": "1.0.0",
+	"title": "Ogłoszenia",
+	"category": "widgets",
+	"icon": "megaphone",
+	"description": "Lista aktualnych ogłoszeń wydziałowych (jak shortcode [us_ogloszenia]).",
+	"keywords": [ "ogłoszenia", "us", "wydział" ],
+	"textdomain": "us-ogloszenia",
+	"attributes": {
+		"limit": {
+			"type": "number",
+			"default": 0
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
+	"editorScript": "file:./editor.js"
+}

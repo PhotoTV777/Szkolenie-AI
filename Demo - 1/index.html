@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dzień Otwarty — Uniwersytet Szczeciński</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="favicon.svg" />
+    <meta name="theme-color" content="#0f2744" />
+    <meta
+      name="description"
+      content="Dzień Otwarty Uniwersytetu Szczecińskiego — 21 marca, ul. Krakowska, Szczecin. Poznaj wydziały, program i zapisz się na wizytę."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      (function () {
+        var stored = localStorage.getItem("theme");
+        if (stored === "dark") {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              navy: {
+                950: "#0a1628",
+                900: "#0f2744",
+                800: "#1a3a5c",
+                700: "#234a72",
+              },
+              gold: {
+                400: "#e4c65a",
+                500: "#d4af37",
+                600: "#b8941f",
+              },
+            },
+            fontFamily: {
+              sans: [
+                "Segoe UI",
+                "system-ui",
+                "-apple-system",
+                "sans-serif",
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @media (prefers-reduced-motion: no-preference) {
+        html {
+          scroll-behavior: smooth;
+        }
+      }
+
+      .skip-link {
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+        z-index: 100;
+        transform: translateY(-200%);
+        border-radius: 0.5rem;
+        background: #d4af37;
+        padding: 0.625rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #0a1628;
+        text-decoration: none;
+        box-shadow: 0 4px 14px rgb(0 0 0 / 25%);
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+        outline: 2px solid #e4c65a;
+        outline-offset: 2px;
+      }
+
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      select:focus-visible,
+      textarea:focus-visible {
+        outline: 2px solid #d4af37;
+        outline-offset: 2px;
+      }
+
+      .hero-grid-bg {
+        background-image: radial-gradient(
+            circle at 1px 1px,
+            rgb(212 175 55 / 0.07) 1px,
+            transparent 0
+          ),
+          linear-gradient(
+            160deg,
+            #0a1628 0%,
+            #0f2744 45%,
+            #1a3a5c 100%
+          );
+        background-size: 28px 28px, 100% 100%;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-slate-50 text-slate-800 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-200"
+  >
+    <a class="skip-link" href="#main-content">Przejdź do treści głównej</a>
+
+    <button
+      id="theme-toggle"
+      type="button"
+      class="fixed right-4 top-4 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-slate-300/80 bg-white/90 text-navy-900 shadow-md backdrop-blur-sm transition hover:border-gold-500/50 hover:bg-white dark:border-slate-600 dark:bg-slate-800/95 dark:text-gold-400 dark:hover:border-gold-500/40"
+      aria-label="Przełącz tryb ciemny"
+      title="Tryb ciemny"
+    >
+      <svg
+        id="theme-icon-moon"
+        class="h-5 w-5 dark:hidden"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+        />
+      </svg>
+      <svg
+        id="theme-icon-sun"
+        class="hidden h-5 w-5 dark:block"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+        />
+      </svg>
+    </button>
+
+    <!-- Hero -->
+    <header
+      class="hero-grid-bg relative min-h-[min(100vh,920px)] overflow-hidden text-white"
+    >
+      <div
+        class="pointer-events-none absolute -right-20 top-24 h-[28rem] w-[28rem] rounded-full bg-gold-500/10 blur-3xl"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="pointer-events-none absolute -left-16 bottom-0 h-64 w-64 rounded-full bg-gold-400/5 blur-3xl"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="pointer-events-none absolute inset-0 bg-gradient-to-tr from-navy-950/80 via-transparent to-navy-800/40"
+        aria-hidden="true"
+      ></div>
+
+      <div class="relative mx-auto flex min-h-[min(100vh,920px)] max-w-6xl flex-col px-6 lg:px-8">
+        <nav
+          class="flex items-center justify-between py-6 pt-8 lg:pt-10"
+          aria-label="Menu główne"
+        >
+          <a
+            href="#main-content"
+            class="flex items-center gap-3 rounded-lg text-slate-200 no-underline"
+          >
+            <span
+              class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-sm font-bold text-gold-400"
+              aria-hidden="true"
+              >US</span
+            >
+            <span class="text-sm font-medium tracking-wide"
+              >Uniwersytet Szczeciński</span
+            >
+          </a>
+          <a
+            href="#zapis"
+            class="hidden rounded-xl border border-white/10 bg-white/5 px-5 py-2.5 text-sm font-semibold text-gold-400 transition hover:border-gold-500/40 hover:bg-white/10 sm:inline-block"
+            >Zapisz się</a
+          >
+        </nav>
+
+        <div
+          class="flex flex-1 flex-col items-center justify-center gap-10 pb-16 pt-6 lg:flex-row lg:items-stretch lg:gap-8 lg:pb-20"
+        >
+          <div
+            class="w-full max-w-xl flex-1 lg:max-w-none lg:self-center"
+          >
+            <div
+              class="overflow-hidden rounded-2xl border border-white/10 bg-navy-950/55 shadow-2xl shadow-black/30 backdrop-blur-md"
+            >
+              <div class="border-b border-white/10 px-6 py-5 sm:px-8 sm:py-6">
+                <p
+                  class="inline-flex items-center gap-2 text-sm font-medium text-gold-400"
+                >
+                  <svg
+                    class="h-4 w-4 shrink-0 opacity-90"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.75"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                  21 marca 2026 · sobota
+                </p>
+                <h1
+                  class="mt-4 text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-[2.65rem]"
+                >
+                  Dzień Otwarty
+                  <span class="mt-1 block text-gold-400"
+                    >Uniwersytetu Szczecińskiego</span
+                  >
+                </h1>
+              </div>
+
+              <div class="border-b border-white/10 px-6 py-5 sm:px-8 sm:py-6">
+                <p class="text-base leading-relaxed text-slate-300 sm:text-lg">
+                  Odkryj uczelnię przy ul. Krakowskiej, porozmawiaj z
+                  wykładowcami i studentami oraz sprawdź, który kierunek
+                  pasuje do Twoich planów. Wstęp wolny — zapraszamy przyszłych
+                  studentów i rodziców.
+                </p>
+              </div>
+
+              <ul class="divide-y divide-white/10" role="list">
+                <li>
+                  <p
+                    class="flex items-center gap-3 px-6 py-4 text-sm text-slate-200 sm:px-8"
+                  >
+                    <span
+                      class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gold-400"
+                      aria-hidden="true"
+                    >
+                      <svg
+                        class="h-4 w-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.75"
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        />
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.75"
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                      </svg>
+                    </span>
+                    ul. Krakowska, Szczecin
+                  </p>
+                </li>
+                <li>
+                  <a
+                    href="#zapis"
+                    class="flex w-full items-center justify-between gap-3 px-6 py-4 text-left text-sm font-semibold text-navy-950 transition hover:bg-gold-400 sm:px-8 bg-gold-500"
+                  >
+                    Zapisz się
+                    <svg
+                      class="h-4 w-4 shrink-0 opacity-70"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#program"
+                    class="group flex w-full items-center justify-between gap-3 px-6 py-4 text-left text-sm font-medium text-slate-200 transition hover:bg-white/5 sm:px-8"
+                  >
+                    <span class="flex items-center gap-3">
+                      <span
+                        class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gold-400"
+                        aria-hidden="true"
+                      >
+                        <svg
+                          class="h-4 w-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.75"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
+                        </svg>
+                      </span>
+                      Zobacz program
+                    </span>
+                    <svg
+                      class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-gold-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="relative hidden w-full max-w-sm flex-1 lg:flex lg:max-w-none"
+            aria-hidden="true"
+          >
+            <div
+              class="flex flex-1 flex-col justify-between rounded-2xl border border-white/10 bg-navy-950/35 p-8 backdrop-blur-sm"
+            >
+              <div
+                class="flex items-center justify-center rounded-xl border border-dashed border-gold-500/25 bg-gold-500/5 py-16"
+              >
+                <span
+                  class="select-none text-7xl font-bold tracking-tighter text-white/10"
+                  >US</span
+                >
+              </div>
+              <div class="mt-8 space-y-3">
+                <div
+                  class="h-2 w-full rounded-full bg-white/5"
+                ></div>
+                <div class="h-2 w-4/5 rounded-full bg-white/5"></div>
+                <div class="h-2 w-3/5 rounded-full bg-gold-500/20"></div>
+              </div>
+            </div>
+            <div
+              class="absolute -bottom-4 -right-4 h-24 w-24 rounded-2xl border border-gold-500/30 bg-gold-500/10"
+            ></div>
+            <div
+              class="absolute -left-3 top-1/3 h-16 w-16 rounded-xl border border-white/10 bg-white/5"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <!-- Program — oś czasu -->
+      <section id="program" class="scroll-mt-20 py-20 lg:py-28">
+        <div class="mx-auto max-w-6xl px-6 lg:px-8">
+          <div class="max-w-2xl">
+            <h2
+              class="text-3xl font-bold text-navy-900 sm:text-4xl dark:text-slate-100"
+            >
+              Program dnia
+            </h2>
+            <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">
+              Zaplanuj wizytę — poniżej najważniejsze punkty programu przy
+              ul. Krakowskiej.
+            </p>
+          </div>
+
+          <ol class="relative mt-16 space-y-0 border-l-2 border-gold-500/40 pl-8 sm:pl-10">
+            <li class="relative pb-12">
+              <span
+                class="absolute -left-[calc(1rem+5px)] top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-gold-500 ring-4 ring-slate-50 dark:ring-slate-950 sm:-left-[calc(1.25rem+5px)]"
+                aria-hidden="true"
+              ></span>
+              <time
+                datetime="09:00"
+                class="text-sm font-bold uppercase tracking-wider text-gold-700 dark:text-gold-400"
+                >09:00</time
+              >
+              <h3
+                class="mt-1 text-xl font-semibold text-navy-900 dark:text-slate-100"
+              >
+                Otwarcie i rejestracja gości
+              </h3>
+              <p class="mt-2 max-w-xl text-slate-600 dark:text-slate-400">
+                Powitanie w holu głównym, mapy kampusu i informacje o trasach
+                zwiedzania.
+              </p>
+            </li>
+            <li class="relative pb-12">
+              <span
+                class="absolute -left-[calc(1rem+5px)] top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-gold-500 ring-4 ring-slate-50 dark:ring-slate-950 sm:-left-[calc(1.25rem+5px)]"
+                aria-hidden="true"
+              ></span>
+              <time
+                datetime="10:00"
+                class="text-sm font-bold uppercase tracking-wider text-gold-700 dark:text-gold-400"
+                >10:00</time
+              >
+              <h3
+                class="mt-1 text-xl font-semibold text-navy-900 dark:text-slate-100"
+              >
+                Prezentacja uczelni i rekrutacji
+              </h3>
+              <p class="mt-2 max-w-xl text-slate-600 dark:text-slate-400">
+                Zasady przyjęć, terminy, stypendia i życie studenckie — sesja
+                Q&amp;A.
+              </p>
+            </li>
+            <li class="relative pb-12">
+              <span
+                class="absolute -left-[calc(1rem+5px)] top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-gold-500 ring-4 ring-slate-50 dark:ring-slate-950 sm:-left-[calc(1.25rem+5px)]"
+                aria-hidden="true"
+              ></span>
+              <time
+                datetime="11:30"
+                class="text-sm font-bold uppercase tracking-wider text-gold-700 dark:text-gold-400"
+                >11:30</time
+              >
+              <h3
+                class="mt-1 text-xl font-semibold text-navy-900 dark:text-slate-100"
+              >
+                Zwiedzanie laboratoriów i sal dydaktycznych
+              </h3>
+              <p class="mt-2 max-w-xl text-slate-600 dark:text-slate-400">
+                Grupy prowadzone przez studentów — wybierz wydział i dołącz do
+                trasy.
+              </p>
+            </li>
+            <li class="relative pb-12">
+              <span
+                class="absolute -left-[calc(1rem+5px)] top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-gold-500 ring-4 ring-slate-50 dark:ring-slate-950 sm:-left-[calc(1.25rem+5px)]"
+                aria-hidden="true"
+              ></span>
+              <time
+                datetime="13:00"
+                class="text-sm font-bold uppercase tracking-wider text-gold-700 dark:text-gold-400"
+                >13:00</time
+              >
+              <h3
+                class="mt-1 text-xl font-semibold text-navy-900 dark:text-slate-100"
+              >
+                Strefa doradztwa zawodowego
+              </h3>
+              <p class="mt-2 max-w-xl text-slate-600 dark:text-slate-400">
+                Indywidualne rozmowy o kierunkach, praktykach i planie kariery.
+              </p>
+            </li>
+            <li class="relative pb-0">
+              <span
+                class="absolute -left-[calc(1rem+5px)] top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-gold-500 ring-4 ring-slate-50 dark:ring-slate-950 sm:-left-[calc(1.25rem+5px)]"
+                aria-hidden="true"
+              ></span>
+              <time
+                datetime="15:00"
+                class="text-sm font-bold uppercase tracking-wider text-gold-700 dark:text-gold-400"
+                >15:00</time
+              >
+              <h3
+                class="mt-1 text-xl font-semibold text-navy-900 dark:text-slate-100"
+              >
+                Zakończenie i materiały dla kandydatów
+              </h3>
+              <p class="mt-2 max-w-xl text-slate-600 dark:text-slate-400">
+                Pakiety informacyjne, kontakt do wydziałów i podsumowanie dnia.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Wydziały -->
+      <section
+        id="wydzialy"
+        class="border-y border-slate-200/80 bg-white py-20 lg:py-28 dark:border-slate-800 dark:bg-slate-900/40"
+      >
+        <div class="mx-auto max-w-6xl px-6 lg:px-8">
+          <div class="max-w-2xl">
+            <h2
+              class="text-3xl font-bold text-navy-900 sm:text-4xl dark:text-slate-100"
+            >
+              Wydziały do odwiedzenia
+            </h2>
+            <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">
+              Wybierz strefy, które Cię interesują — na miejscu znajdziesz stoiska
+              i prowadzących.
+            </p>
+          </div>
+
+          <div class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <article
+              class="group rounded-2xl border border-slate-200 bg-slate-50 p-8 transition hover:border-gold-500/40 hover:shadow-lg hover:shadow-navy-900/5 dark:border-slate-700 dark:bg-slate-800/80 dark:hover:shadow-black/20"
+            >
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-gold-400"
+                aria-hidden="true"
+              >
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h3
+                class="mt-6 text-lg font-semibold text-navy-900 dark:text-slate-100"
+              >
+                Wydział Humanistyczny
+              </h3>
+              <p class="mt-2 text-slate-600 dark:text-slate-400">
+                Filologia, historia, kulturoznawstwo i języki obce.
+              </p>
+            </article>
+
+            <article
+              class="group rounded-2xl border border-slate-200 bg-slate-50 p-8 transition hover:border-gold-500/40 hover:shadow-lg hover:shadow-navy-900/5 dark:border-slate-700 dark:bg-slate-800/80 dark:hover:shadow-black/20"
+            >
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-gold-400"
+                aria-hidden="true"
+              >
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3
+                class="mt-6 text-lg font-semibold text-navy-900 dark:text-slate-100"
+              >
+                Wydział Ekonomii i Finansów
+              </h3>
+              <p class="mt-2 text-slate-600 dark:text-slate-400">
+                Finanse, rachunkowość, zarządzanie i analiza danych.
+              </p>
+            </article>
+
+            <article
+              class="group rounded-2xl border border-slate-200 bg-slate-50 p-8 transition hover:border-gold-500/40 hover:shadow-lg hover:shadow-navy-900/5 dark:border-slate-700 dark:bg-slate-800/80 dark:hover:shadow-black/20"
+            >
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-gold-400"
+                aria-hidden="true"
+              >
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3
+                class="mt-6 text-lg font-semibold text-navy-900 dark:text-slate-100"
+              >
+                Wydział Nauk Ścisłych i Technicznych
+              </h3>
+              <p class="mt-2 text-slate-600 dark:text-slate-400">
+                Informatyka, matematyka, fizyka i inżynieria.
+              </p>
+            </article>
+
+            <article
+              class="group rounded-2xl border border-slate-200 bg-slate-50 p-8 transition hover:border-gold-500/40 hover:shadow-lg hover:shadow-navy-900/5 dark:border-slate-700 dark:bg-slate-800/80 dark:hover:shadow-black/20"
+            >
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-gold-400"
+                aria-hidden="true"
+              >
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3
+                class="mt-6 text-lg font-semibold text-navy-900 dark:text-slate-100"
+              >
+                Wydział Nauk Społecznych
+              </h3>
+              <p class="mt-2 text-slate-600 dark:text-slate-400">
+                Socjologia, politologia, bezpieczeństwo narodowe.
+              </p>
+            </article>
+
+            <article
+              class="group rounded-2xl border border-slate-200 bg-slate-50 p-8 transition hover:border-gold-500/40 hover:shadow-lg hover:shadow-navy-900/5 dark:border-slate-700 dark:bg-slate-800/80 dark:hover:shadow-black/20"
+            >
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-gold-400"
+                aria-hidden="true"
+              >
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <h3
+                class="mt-6 text-lg font-semibold text-navy-900 dark:text-slate-100"
+              >
+                Wydział Zdrowia
+              </h3>
+              <p class="mt-2 text-slate-600 dark:text-slate-400">
+                Dietetyka, fizjoterapia i nauki o zdrowiu.
+              </p>
+            </article>
+
+            <article
+              class="group rounded-2xl border border-slate-200 bg-slate-50 p-8 transition hover:border-gold-500/40 hover:shadow-lg hover:shadow-navy-900/5 dark:border-slate-700 dark:bg-slate-800/80 dark:hover:shadow-black/20"
+            >
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-gold-400"
+                aria-hidden="true"
+              >
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                </svg>
+              </div>
+              <h3
+                class="mt-6 text-lg font-semibold text-navy-900 dark:text-slate-100"
+              >
+                Wydział Prawa i Administracji
+              </h3>
+              <p class="mt-2 text-slate-600 dark:text-slate-400">
+                Prawo, administracja publiczna i studia europejskie.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Formularz zapisu -->
+      <section id="zapis" class="scroll-mt-20 py-20 lg:py-28">
+        <div class="mx-auto max-w-6xl px-6 lg:px-8">
+          <div class="mx-auto max-w-xl">
+            <h2
+              id="form-zapis-heading"
+              class="text-3xl font-bold text-navy-900 sm:text-4xl dark:text-slate-100"
+            >
+              Zapisz się na Dzień Otwarty
+            </h2>
+            <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">
+              Wypełnij formularz, abyśmy mogli przygotować dla Ciebie materiały.
+              Udział jest bezpłatny — zapis ułatwia organizację.
+            </p>
+
+            <form
+              id="form-zapis"
+              class="mt-10 space-y-6 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-700 dark:bg-slate-800/80"
+              action="#"
+              method="post"
+              aria-labelledby="form-zapis-heading"
+              onsubmit="event.preventDefault(); var s=document.getElementById('form-success'); s.classList.remove('hidden'); this.querySelector('button[type=submit]').disabled=true; s.focus();"
+            >
+              <div>
+                <label
+                  for="imie"
+                  class="block text-sm font-medium text-navy-900 dark:text-slate-200"
+                  >Imię i nazwisko</label
+                >
+                <input
+                  type="text"
+                  id="imie"
+                  name="imie"
+                  required
+                  autocomplete="name"
+                  class="mt-2 w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-800 placeholder-slate-500 transition dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100 dark:placeholder-slate-400"
+                  placeholder="Jan Kowalski"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-navy-900 dark:text-slate-200"
+                  >Adres e-mail</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  class="mt-2 w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-800 placeholder-slate-500 transition dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100 dark:placeholder-slate-400"
+                  placeholder="jan@example.com"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="wydzial"
+                  class="block text-sm font-medium text-navy-900 dark:text-slate-200"
+                  >Wydział, który chcesz odwiedzić</label
+                >
+                <select
+                  id="wydzial"
+                  name="wydzial"
+                  required
+                  class="mt-2 w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-800 transition dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100"
+                >
+                  <option value="" disabled selected hidden>
+                    Wybierz wydział…
+                  </option>
+                  <option value="humanistyczny">Wydział Humanistyczny</option>
+                  <option value="ekonomii">Wydział Ekonomii i Finansów</option>
+                  <option value="scisly">Wydział Nauk Ścisłych i Technicznych</option>
+                  <option value="spoleczne">Wydział Nauk Społecznych</option>
+                  <option value="zdrowia">Wydział Zdrowia</option>
+                  <option value="prawo">Wydział Prawa i Administracji</option>
+                </select>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full rounded-full bg-navy-900 py-3.5 text-base font-semibold text-white transition hover:bg-navy-800 disabled:opacity-60"
+              >
+                Wyślij zgłoszenie
+              </button>
+
+              <p
+                id="form-success"
+                class="hidden rounded-lg border border-gold-500/40 bg-gold-500/15 px-4 py-3 text-center text-sm font-medium text-navy-900 dark:border-gold-500/50 dark:bg-gold-500/20 dark:text-gold-300"
+                role="status"
+                aria-live="polite"
+                tabindex="-1"
+              >
+                Dziękujemy za zgłoszenie! Do zobaczenia 21 marca przy
+                ul. Krakowskiej.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section
+        id="faq"
+        class="scroll-mt-20 border-t border-slate-200/80 bg-white py-20 lg:py-28 dark:border-slate-800 dark:bg-slate-900/40"
+      >
+        <div class="mx-auto max-w-3xl px-6 lg:px-8">
+          <div class="text-center">
+            <h2
+              class="text-3xl font-bold text-navy-900 sm:text-4xl dark:text-slate-100"
+            >
+              Najczęstsze pytania
+            </h2>
+            <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">
+              Odpowiedzi dla przyszłych studentów i rodziców — jeśli czegoś
+              brakuje, zapytaj osobiście podczas Dnia Otwartego.
+            </p>
+          </div>
+
+          <div class="faq-accordion mt-12 space-y-3" data-accordion>
+            <div
+              class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-800/80"
+            >
+              <h3>
+                <button
+                  type="button"
+                  class="faq-trigger flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-navy-900 transition hover:text-gold-700 dark:text-slate-100 dark:hover:text-gold-400"
+                  aria-expanded="false"
+                  aria-controls="faq-panel-1"
+                  id="faq-trigger-1"
+                >
+                  Czy muszę się wcześniej zapisać na Dzień Otwarty?
+                  <svg
+                    class="faq-chevron h-5 w-5 shrink-0 text-gold-700 transition-transform duration-200 dark:text-gold-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+              </h3>
+              <div
+                id="faq-panel-1"
+                class="faq-panel hidden border-t border-slate-200 px-6 pb-5 pt-1 dark:border-slate-700"
+                role="region"
+                aria-labelledby="faq-trigger-1"
+              >
+                <p class="pt-3 text-slate-600 leading-relaxed dark:text-slate-400">
+                  Wejście na Dzień Otwarty jest bezpłatne i nie wymaga
+                  obowiązkowej rejestracji — możesz przyjść w godzinach
+                  9:00–15:00. Formularz zapisu na stronie pomaga nam przygotować
+                  materiały i szacować liczbę gości, dlatego prosimy o niego,
+                  jeśli już wiesz, że przyjdziesz.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-800/80"
+            >
+              <h3>
+                <button
+                  type="button"
+                  class="faq-trigger flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-navy-900 transition hover:text-gold-700 dark:text-slate-100 dark:hover:text-gold-400"
+                  aria-expanded="false"
+                  aria-controls="faq-panel-2"
+                  id="faq-trigger-2"
+                >
+                  Czy mogę przyjść z rodzicami lub opiekunami?
+                  <svg
+                    class="faq-chevron h-5 w-5 shrink-0 text-gold-700 transition-transform duration-200 dark:text-gold-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+              </h3>
+              <div
+                id="faq-panel-2"
+                class="faq-panel hidden border-t border-slate-200 px-6 pb-5 pt-1 dark:border-slate-700"
+                role="region"
+                aria-labelledby="faq-trigger-2"
+              >
+                <p class="pt-3 text-slate-600 leading-relaxed dark:text-slate-400">
+                  Tak — zachęcamy, aby decyzję o studiach podejmować razem z
+                  rodziną. Dla rodziców i opiekunów przewidzieliśmy osobne
+                  informacje o rekrutacji, opłatach, stypendiach oraz możliwości
+                  zakwaterowania w Szczecinie. Na stoiskach wydziałowych chętnie
+                  odpowiemy na pytania wszystkich gości.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-800/80"
+            >
+              <h3>
+                <button
+                  type="button"
+                  class="faq-trigger flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-navy-900 transition hover:text-gold-700 dark:text-slate-100 dark:hover:text-gold-400"
+                  aria-expanded="false"
+                  aria-controls="faq-panel-3"
+                  id="faq-trigger-3"
+                >
+                  Jak dojechać na kampus i gdzie zaparkować?
+                  <svg
+                    class="faq-chevron h-5 w-5 shrink-0 text-gold-700 transition-transform duration-200 dark:text-gold-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+              </h3>
+              <div
+                id="faq-panel-3"
+                class="faq-panel hidden border-t border-slate-200 px-6 pb-5 pt-1 dark:border-slate-700"
+                role="region"
+                aria-labelledby="faq-trigger-3"
+              >
+                <p class="pt-3 text-slate-600 leading-relaxed dark:text-slate-400">
+                  Lokalizacja przy ul. Krakowskiej jest dobrze skomunikowana —
+                  w pobliżu zatrzymują się tramwaje i autobusy ZDiTM. Dojazd
+                  samochodem: od ul. Matejki lub al. Wojska Polskiego; przy
+                  budynkach uczelni są ogólnodostępne miejsca parkingowe (w
+                  sobotę zwykle łatwiej o wolne miejsce). Wejście dla gości Dnia
+                  Otwartego i rejestracja — hol główny, gdzie otrzymasz mapę
+                  kampusu.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-800/80"
+            >
+              <h3>
+                <button
+                  type="button"
+                  class="faq-trigger flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-navy-900 transition hover:text-gold-700 dark:text-slate-100 dark:hover:text-gold-400"
+                  aria-expanded="false"
+                  aria-controls="faq-panel-4"
+                  id="faq-trigger-4"
+                >
+                  Czy dowiem się na miejscu o rekrutacji i wymaganiach na studia?
+                  <svg
+                    class="faq-chevron h-5 w-5 shrink-0 text-gold-700 transition-transform duration-200 dark:text-gold-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+              </h3>
+              <div
+                id="faq-panel-4"
+                class="faq-panel hidden border-t border-slate-200 px-6 pb-5 pt-1 dark:border-slate-700"
+                role="region"
+                aria-labelledby="faq-trigger-4"
+              >
+                <p class="pt-3 text-slate-600 leading-relaxed dark:text-slate-400">
+                  Tak. O godz. 10:00 odbędzie się prezentacja ogólna o zasadach
+                  rekrutacji na rok akademicki 2026/2027, a przy stoiskach
+                  wydziałowych uzyskasz informacje o progach punktowych,
+                  przedmiotach maturalnych, praktykach i specjalnościach.
+                  Doradcy z Biura Rekrutacji będą dostępni przez cały dzień
+                  wydarzenia.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-800/80"
+            >
+              <h3>
+                <button
+                  type="button"
+                  class="faq-trigger flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-navy-900 transition hover:text-gold-700 dark:text-slate-100 dark:hover:text-gold-400"
+                  aria-expanded="false"
+                  aria-controls="faq-panel-5"
+                  id="faq-trigger-5"
+                >
+                  Czy w jeden dzień zdążę odwiedzić kilka wydziałów?
+                  <svg
+                    class="faq-chevron h-5 w-5 shrink-0 text-gold-700 transition-transform duration-200 dark:text-gold-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+              </h3>
+              <div
+                id="faq-panel-5"
+                class="faq-panel hidden border-t border-slate-200 px-6 pb-5 pt-1 dark:border-slate-700"
+                role="region"
+                aria-labelledby="faq-trigger-5"
+              >
+                <p class="pt-3 text-slate-600 leading-relaxed dark:text-slate-400">
+                  Tak — program jest rozłożony na kilka godzin, a wydziały mają
+                  stoiska w różnych strefach kampusu. Warto zaplanować 2–3
+                  priorytetowe kierunki i dołączyć do zwiedzania laboratoriów o
+                  11:30 (trasy rotacyjne co ok. 30 minut). Mapę i plan na dzień
+                  otrzymasz przy rejestracji przy wejściu.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  <!-- Stopka -->
+    <footer
+      class="border-t border-navy-800 bg-navy-950 text-slate-300"
+      aria-label="Stopka i dane kontaktowe"
+    >
+      <div class="mx-auto max-w-6xl px-6 py-14 lg:px-8">
+        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <h2 class="text-lg font-semibold text-white">Kontakt</h2>
+            <ul class="mt-4 space-y-3 text-sm">
+              <li>
+                <span class="text-gold-400">Biuro Rekrutacji</span><br />
+                <a
+                  class="text-slate-200 underline decoration-gold-500/50 underline-offset-2 hover:text-gold-400"
+                  href="tel:+48914440000"
+                  >tel. +48 91 444 00 00</a
+                ><br />
+                <a
+                  class="text-slate-200 underline decoration-gold-500/50 underline-offset-2 hover:text-gold-400"
+                  href="mailto:rekrutacja@usz.edu.pl"
+                  >rekrutacja@usz.edu.pl</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="text-lg font-semibold text-white">Lokalizacja</h2>
+            <p class="mt-4 text-sm leading-relaxed">
+              Uniwersytet Szczeciński<br />
+              ul. Krakowska<br />
+              70-383 Szczecin
+            </p>
+          </div>
+          <div>
+            <h2 class="text-lg font-semibold text-white">Dzień wydarzenia</h2>
+            <p class="mt-4 text-sm">
+              <time datetime="2026-03-21" class="text-gold-400"
+                >21 marca 2026</time
+              ><br />
+              godz. 9:00–15:00
+            </p>
+          </div>
+        </div>
+        <p class="mt-12 border-t border-white/10 pt-8 text-center text-xs text-slate-400">
+          © 2026 Uniwersytet Szczeciński · strona informacyjna Dnia Otwartego
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var key = "theme";
+        var root = document.documentElement;
+        var btn = document.getElementById("theme-toggle");
+
+        function applyTheme(dark) {
+          root.classList.toggle("dark", dark);
+          localStorage.setItem(key, dark ? "dark" : "light");
+          btn.setAttribute(
+            "aria-label",
+            dark ? "Włącz tryb jasny" : "Włącz tryb ciemny"
+          );
+          btn.setAttribute("title", dark ? "Tryb jasny" : "Tryb ciemny");
+        }
+
+        btn.addEventListener("click", function () {
+          applyTheme(!root.classList.contains("dark"));
+        });
+
+        var stored = localStorage.getItem(key);
+        if (stored === "dark" || stored === "light") {
+          applyTheme(stored === "dark");
+        } else {
+          applyTheme(root.classList.contains("dark"));
+        }
+      })();
+
+      (function () {
+        var root = document.querySelector("[data-accordion]");
+        if (!root) return;
+
+        function closeItem(trigger) {
+          var panelId = trigger.getAttribute("aria-controls");
+          var panel = document.getElementById(panelId);
+          trigger.setAttribute("aria-expanded", "false");
+          if (panel) panel.classList.add("hidden");
+          var chevron = trigger.querySelector(".faq-chevron");
+          if (chevron) chevron.classList.remove("rotate-180");
+        }
+
+        function openItem(trigger) {
+          var panelId = trigger.getAttribute("aria-controls");
+          var panel = document.getElementById(panelId);
+          trigger.setAttribute("aria-expanded", "true");
+          if (panel) panel.classList.remove("hidden");
+          var chevron = trigger.querySelector(".faq-chevron");
+          if (chevron) chevron.classList.add("rotate-180");
+        }
+
+        function toggleItem(trigger) {
+          var isOpen = trigger.getAttribute("aria-expanded") === "true";
+          root.querySelectorAll(".faq-trigger").forEach(closeItem);
+          if (!isOpen) openItem(trigger);
+        }
+
+        root.querySelectorAll(".faq-trigger").forEach(function (trigger) {
+          trigger.addEventListener("click", function () {
+            toggleItem(trigger);
+          });
+          trigger.addEventListener("keydown", function (event) {
+            var triggers = Array.prototype.slice.call(
+              root.querySelectorAll(".faq-trigger")
+            );
+            var index = triggers.indexOf(trigger);
+            if (event.key === "ArrowDown") {
+              event.preventDefault();
+              triggers[Math.min(index + 1, triggers.length - 1)].focus();
+            } else if (event.key === "ArrowUp") {
+              event.preventDefault();
+              triggers[Math.max(index - 1, 0)].focus();
+            } else if (event.key === "Home") {
+              event.preventDefault();
+              triggers[0].focus();
+            } else if (event.key === "End") {
+              event.preventDefault();
+              triggers[triggers.length - 1].focus();
+            }
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
